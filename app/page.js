@@ -50,13 +50,13 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "CONTACT",
-    dropdown: [
-      { label: "Call Us",    href: " (908) 627-0152" },
-      { label: "Email Us",   href: "junkdrunkflea@gmail.com" },
-      { label: "Directions", href: "179 Broad StPhillipsburg, NJ 08865" },
-    ],
-  },
+  label: "CONTACT",
+  dropdown: [
+    { label: "Call Us", href: "tel:+19086270152" },
+    { label: "Email Us", href: "mailto:junkdrunkflea@gmail.com" },
+    { label: "Directions", href: "https://www.google.com/maps?q=179+Broad+St+Phillipsburg+NJ+08865", external: true },
+  ],
+},
 ];
 
 // ── GRAND OPENING EVENT CARDS ──────────────────────────────────
