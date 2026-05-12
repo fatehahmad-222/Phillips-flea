@@ -52,9 +52,9 @@ const NAV_ITEMS = [
   {
     label: "CONTACT",
     dropdown: [
-      { label: "Call Us",    href: "tel:+1234567890" },
-      { label: "Email Us",   href: "mailto:info@phillipsflea.com" },
-      { label: "Directions", href: "#location" },
+      { label: "Call Us",    href: " (908) 627-0152" },
+      { label: "Email Us",   href: "junkdrunkflea@gmail.com" },
+      { label: "Directions", href: "179 Broad StPhillipsburg, NJ 08865" },
     ],
   },
 ];
@@ -103,73 +103,70 @@ export default function Home() {
       {/* ══════════════════════════════════
            TOP HEADER
       ══════════════════════════════════ */}
-      <header className="bg-amber-50 border-b border-gray-200 px-6 py-4 ">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-start gap-4 ml-a">
+      <header className="bg-amber-50 border-b border-gray-200 px-6 py-4">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-10">
+    {/* Logo */}
+    <div className="flex-shrink-0">
+      <Image
+        src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778610627/phillips_flea_logo_tyfycm.png"
+        alt="Phillips Flea Market"
+        width={220}
+        height={80}
+        priority
+        className="object-contain h-24"
+      />
+    </div>
 
-          {/* ── Logo from /public ──
-               Put your logo file in the Next.js /public folder.
-               Example: /public/logo.png  →  src="/logo.png"
-               Adjust width/height to match your image dimensions.
-          */}
-          <div className="flex-shrink-0 ">
-            <Image
-              src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778610627/phillips_flea_logo_tyfycm.png"
-              alt="Phillips Flea Market"
-              width={220}
-              height={80}
-              priority
-              className="object-contain h-28 "
-            />
-          </div>
+    {/* Contact strip */}
+    <div className="flex flex-col sm:flex-row  items-center text-center gap-10 md:gap-14">
 
-          {/* ── Contact strip ── */}
-          <div className="flex flex-col sm:flex-row items-center gap-20 md:gap-20 ml-auto">
+      {/* Hours */}
+      <div className="flex items-start gap-4">
+        <svg className="w-7 h-7 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+        </svg>
 
-            {/* Hours */}
-            <div className="flex items-start gap-5 mt-8">
-              <svg className="w-6 h-6 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
-              </svg>
-              <div>
-                <p className="font-semibold text-gray-800 text-sm">Hours</p>
-                <p className="text-xs text-gray-500">Saturday &amp; Sunday</p>
-                <p className="text-xs text-gray-500">Outdoor: 6AM – 4PM</p>
-                <p className="text-xs text-gray-500">Shops: 8AM – 4PM</p>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="flex items-start gap-5">
-              <svg className="w-6 h-6 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2 7l10 7 10-7" />
-              </svg>
-              <div>
-                <a href="mailto:info@phillipsflea.com" className="text-blue-600 text-sm font-semibold hover:underline">
-                 junkdrunkflea@gmail.com 
-                </a>
-                <p className="text-xs text-gray-500">You can e-mail us</p>
-              </div>
-            </div>
-
-            {/* Phone */}
-            <div className="flex items-start gap-5">
-              <svg className="w-6 h-6 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.45 11.45 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1C9.39 21 3 14.61 3 7a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
-              </svg>
-              <div>
-                {/* ← CHANGE to your real phone number */}
-                <a href="tel:+1234567890" className="font-semibold text-gray-800 text-sm hover:underline">
-                  (908) 627-0152
-                </a>
-                <p className="text-xs text-gray-500">Give us a call</p>
-              </div>
-            </div>
-
-          </div>
+        <div>
+          <p className="font-semibold text-gray-800 text-base">Hours</p>
+          <p className="text-sm text-gray-500">Saturday & Sunday</p>
+          <p className="text-sm text-gray-500">Outdoor: 6AM – 4PM</p>
+          <p className="text-sm text-gray-500">Shops: 8AM – 4PM</p>
         </div>
-      </header>
+      </div>
+
+      {/* Email */}
+      <div className="flex items-start gap-4">
+        <svg className="w-7 h-7 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2 7l10 7 10-7" />
+        </svg>
+
+        <div>
+          <a href="mailto:info@phillipsflea.com" className="text-blue-600 text-base font-semibold hover:underline">
+            junkdrunkflea@gmail.com
+          </a>
+          <p className="text-sm text-gray-500">You can e-mail us</p>
+        </div>
+      </div>
+
+      {/* Phone */}
+      <div className="flex items-start gap-4">
+        <svg className="w-7 h-7 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.45 11.45 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1C9.39 21 3 14.61 3 7a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
+        </svg>
+
+        <div>
+          <a href="tel:+1234567890" className="font-semibold text-gray-800 text-base hover:underline">
+            (908) 627-0152
+          </a>
+          <p className="text-sm text-gray-500">Give us a call</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
 
       {/* ══════════════════════════════════
            STICKY NAVBAR
