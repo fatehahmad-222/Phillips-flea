@@ -96,15 +96,14 @@ function useCountdown(target) {
 }
 
 // ── COUNTDOWN BOX ──────────────────────────────────────────────
-// ── COUNTDOWN BOX ──────────────────────────────────────────────
 function CountdownBox({ value, label }) {
   return (
     <div className="flex flex-col items-center">
       <div
         className="flex items-center justify-center rounded-lg text-3xl md:text-4xl font-black text-white"
         style={{
-          width: "67px",          // +5% width approx
-          height: "84px",         // +20px height
+          width: "67px",
+          height: "84px",
           background: "rgba(0,0,0,0.75)",
           border: "2px solid rgba(255,200,0,0.5)",
           boxShadow:
@@ -191,6 +190,44 @@ export default function Home() {
                   (908) 627-0152
                 </a>
               </div>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden sm:block w-px h-12 bg-gray-300" />
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-3">
+              {/* Facebook */}
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                className="text-gray-500 hover:text-blue-600 transition-colors">
+                <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                </svg>
+              </a>
+              {/* Instagram */}
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                className="text-gray-500 hover:text-pink-500 transition-colors">
+                <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              {/* TikTok */}
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+                className="text-gray-500 hover:text-black transition-colors">
+                <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+                </svg>
+              </a>
+              {/* YouTube */}
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                className="text-gray-500 hover:text-red-600 transition-colors">
+                <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                  <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
+                </svg>
+              </a>
             </div>
 
           </div>
@@ -509,7 +546,7 @@ export default function Home() {
       background:
         "radial-gradient(circle, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.50) 35%, rgba(0,0,0,0.18) 58%, transparent 78%)",
       filter: "blur(24px)",
-      bottom: "10px", // moved upward ~15%
+      bottom: "10px",
       zIndex: 0,
       pointerEvents: "none",
     }}
@@ -525,7 +562,6 @@ export default function Home() {
     <CountdownBox value={days} label="Days" />
     <CountdownBox value={hours} label="Hours" />
     <CountdownBox value={minutes} label="Minutes" />
-
     <CountdownBox value={seconds} label="Seconds" />
   </div>
 </div>
@@ -536,8 +572,8 @@ export default function Home() {
     fontFamily: "'Dancing Script', 'Brush Script MT', 'Comic Sans MS', cursive",
     color: "#ffd700",
     textShadow: "0 2px 8px rgba(0,0,0,0.8)",
-    fontSize: "clamp(1.4rem, 3.6vw, 1.9rem)", // ~20% bigger
-    fontWeight: 500, // ~10% bolder
+    fontSize: "clamp(1.4rem, 3.6vw, 1.9rem)",
+    fontWeight: 500,
     letterSpacing: "0.03em",
     lineHeight: "1",
   }}
@@ -551,51 +587,49 @@ export default function Home() {
            GRAND OPENING SECTION
       ══════════════════════════════════ */}
       <section id="grand-opening" className="bg-amber-50 py-16 px-6">
-  
 
-       <div className="flex items-center justify-center gap-5 mb-6">
-  {/* Left Lines */}
-  <div className="flex flex-col gap-[10px]">
-    <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[30deg] origin-right"></span>
-    <span className="block w-13 h-[3px] bg-[#d97757] rounded-full rotate-[5deg] origin-right"></span>
-    <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[-20deg] origin-right"></span>
-  </div>
+        <div className="flex items-center justify-center gap-5 mb-6">
+          {/* Left Lines */}
+          <div className="flex flex-col gap-[10px]">
+            <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[30deg] origin-right"></span>
+            <span className="block w-13 h-[3px] bg-[#d97757] rounded-full rotate-[5deg] origin-right"></span>
+            <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[-20deg] origin-right"></span>
+          </div>
 
-<h2
-  className="uppercase text-gray-900 text-center md:text-left"
-  style={{
-    fontFamily:
-      "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
-    fontSize: "clamp(2.4rem, 7vw, 4rem)",
-    fontWeight: 300,
-    letterSpacing: "0.05em",
-    lineHeight: 1.05,
-  }}
->
-  Grand Opening
-</h2>
-  {/* Right Lines */}
-  <div className="flex flex-col gap-[10px]">
-    <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[-30deg] origin-left"></span>
-    <span className="block w-13 h-[3px] bg-[#d97757] rounded-full rotate-[-5deg] origin-left"></span>
-    <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[20deg] origin-left"></span>
-  </div>
-</div>
-      <div className="max-w-4xl mx-auto text-center">
+          <h2
+            className="uppercase text-gray-900 text-center"
+            style={{
+              fontFamily:
+                "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
+              fontSize: "clamp(2.4rem, 7vw, 4rem)",
+              fontWeight: 300,
+              letterSpacing: "0.05em",
+              lineHeight: 1.05,
+            }}
+          >
+            Grand Opening
+          </h2>
+
+          {/* Right Lines */}
+          <div className="flex flex-col gap-[10px]">
+            <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[-30deg] origin-left"></span>
+            <span className="block w-13 h-[3px] bg-[#d97757] rounded-full rotate-[-5deg] origin-left"></span>
+            <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[20deg] origin-left"></span>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center">
 
           {/* Section heading — matching reference style with lines */}
-     <div className="flex items-center justify-center gap-4 mb-3">
-  
-  {/* Left Line */}
-  <div className="h-[2px] w-16 md:w-24 bg-red-600" />
+          <div className="flex items-center justify-center gap-4 mb-3">
+            {/* Left Line */}
+            <div className="h-[2px] w-16 md:w-24 bg-red-600" />
+            {/* Star */}
+            <span className="text-red-500 text-lg leading-none">★</span>
+            {/* Right Line */}
+            <div className="h-[2px] w-16 md:w-24 bg-red-600" />
+          </div>
 
-  {/* Star */}
-  <span className="text-red-500 text-lg leading-none">★</span>
-
-  {/* Right Line */}
-  <div className="h-[2px] w-16 md:w-24 bg-red-600" />
-
-</div>
           {/* Body copy */}
           <p className="text-gray-700 text-base md:text-lg mb-2 max-w-2xl mx-auto leading-relaxed">
             Come celebrate{" "}
@@ -621,79 +655,75 @@ export default function Home() {
             Don&rsquo;t miss out!
           </p>
 
-         
+          {/* Highlight Strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4">
+            {[
+              {
+                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778684726/gift-box_afiqie.png",
+                title: "PRIZES &\nGIVEAWAYS",
+                desc: "Exciting prizes all weekend long!",
+              },
+              {
+                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778684760/win_p7exab.png",
+                title: "WIN A FREE\nVENDOR TABLE\nFOR 6 MONTHS",
+                desc: "One lucky vendor will win big!",
+              },
+              {
+                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778684753/hot-dog_oh8qhe.png",
+                title: "HOT DOG STAND\n& ENTERTAINMENT",
+                desc: "Enjoy great food and live entertainment all weekend!",
+              },
+              {
+                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778684733/award_it4uyd.png",
+                title: "VENDOR RAFFLE\nAT NOON ON\nSATURDAY",
+                desc: "With multiple vendor prizes!",
+                badge: true,
+              },
+            ].map((item, idx) => (
+              <div
+                key={item.title}
+                className={`relative flex flex-col items-center justify-start gap-2 px-4 py-6 ${
+                  idx < 3 ? "border-r border-[#DEC2BA]" : ""
+                }`}
+              >
+                {/* Bottom line */}
+                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#DEC2BA]" />
 
-  {/* Highlight Strip */}
-<div className="grid grid-cols-2 sm:grid-cols-4">
-  {[
-    {
-      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778684726/gift-box_afiqie.png",
-      title: "PRIZES &\nGIVEAWAYS",
-      desc: "Exciting prizes all weekend long!",
-    },
-    {
-      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778684760/win_p7exab.png",
-      title: "WIN A FREE\nVENDOR TABLE\nFOR 6 MONTHS",
-      desc: "One lucky vendor will win big!",
-    },
-    {
-      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778684753/hot-dog_oh8qhe.png",
-      title: "HOT DOG STAND\n& ENTERTAINMENT",
-      desc: "Enjoy great food and live entertainment all weekend!",
-    },
-    {
-      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778684733/award_it4uyd.png",
-      title: "VENDOR RAFFLE\nAT NOON ON\nSATURDAY",
-      desc: "With multiple vendor prizes!",
-      badge: true,
-    },
-  ].map((item, idx) => (
-    <div
-      key={item.title}
-      className={`relative flex flex-col items-center justify-start gap-2 px-4 py-6 ${
-        idx < 3 ? "border-r border-[#DEC2BA]" : ""
-      }`}
-    >
-      {/* Bottom line */}
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#DEC2BA]" />
+                <div className="relative">
+                  {item.badge && (
+                    <div
+                      className="absolute -top-1 -right-2 bg-red-500 text-white text-[9px] font-black uppercase px-1.5 py-0.5 rounded"
+                      style={{ transform: "rotate(6deg)" }}
+                    >
+                      RAFFLE
+                    </div>
+                  )}
 
-      <div className="relative">
-        {item.badge && (
-          <div
-            className="absolute -top-1 -right-2 bg-red-500 text-white text-[9px] font-black uppercase px-1.5 py-0.5 rounded"
-            style={{ transform: "rotate(6deg)" }}
-          >
-            RAFFLE
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={64}
+                    height={64}
+                    className="object-contain"
+                  />
+                </div>
+
+                <p
+                  className="text-xs font-black text-stone-800 uppercase tracking-wide text-center leading-snug whitespace-pre-line"
+                  style={{ fontSize: "0.80rem" }}
+                >
+                  {item.title}
+                </p>
+
+                <p
+                  className="text-xs text-stone-500 text-center leading-snug"
+                  style={{ fontSize: "0.80rem" }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
-        )}
-
-        <Image
-          src={item.img}
-          alt={item.title}
-          width={64}
-          height={64}
-          className="object-contain"
-        />
-      </div>
-
-      <p
-        className="text-xs font-black text-stone-800 uppercase tracking-wide text-center leading-snug whitespace-pre-line"
-        style={{ fontSize: "0.80rem" }}
-      >
-        {item.title}
-      </p>
-
-      <p
-        className="text-xs text-stone-500 text-center leading-snug"
-        style={{ fontSize: "0.80rem" }}
-      >
-        {item.desc}
-      </p>
-    </div>
-  ))}
-</div>
-
-    
 
         </div>
       </section>
