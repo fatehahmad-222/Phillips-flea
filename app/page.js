@@ -561,20 +561,19 @@ export default function Home() {
     <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[-20deg] origin-right"></span>
   </div>
 
-  <h2
-    className="uppercase text-gray-900"
-    style={{
-      fontFamily:
-        "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
-      fontSize: "clamp(2.4rem, 7vw, 4rem)",
-      fontWeight: 300,
-      letterSpacing: "0.05em",
-      lineHeight: 1.05,
-    }}
-  >
-    Grand Opening
-  </h2>
-
+<h2
+  className="uppercase text-gray-900 text-center md:text-left"
+  style={{
+    fontFamily:
+      "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
+    fontSize: "clamp(2.4rem, 7vw, 4rem)",
+    fontWeight: 300,
+    letterSpacing: "0.05em",
+    lineHeight: 1.05,
+  }}
+>
+  Grand Opening
+</h2>
   {/* Right Lines */}
   <div className="flex flex-col gap-[10px]">
     <span className="block w-12 h-[3px] bg-[#d97757] rounded-full rotate-[-30deg] origin-left"></span>
