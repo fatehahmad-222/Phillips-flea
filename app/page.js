@@ -479,7 +479,7 @@ export default function Home() {
   style={{
     fontFamily: "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
     fontSize: "clamp(1.9rem, 8vw, 4rem)",
-    fontWeight: 550,
+    fontWeight: 500,
     letterSpacing: "0.05em",
     lineHeight: 1,
     WebkitTextStroke: "0.4px #061529",
