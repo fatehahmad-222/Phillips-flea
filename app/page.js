@@ -474,15 +474,17 @@ export default function Home() {
             <span className="block w-9 h-[3px] bg-red-600 rounded-full rotate-[-20deg] origin-right"></span>
           </div>
 
-          <h2
+         <h2
   className="uppercase text-[#061529] text-center"
   style={{
     fontFamily: "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
-    fontSize: "clamp(1.9rem, 8vw, 4rem)",
+    fontSize: "clamp(2rem, 8vw, 4rem)",
     fontWeight: 500,
-    letterSpacing: "0.05em",
-    lineHeight: 1,
-    WebkitTextStroke: "0.4px #061529",
+    letterSpacing: "0.04em",
+    lineHeight: 0.9,
+    textRendering: "geometricPrecision",
+    WebkitFontSmoothing: "none",
+    WebkitTextStroke: "0.6px #061529",
   }}
 >
   Grand Opening
