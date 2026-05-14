@@ -82,8 +82,8 @@ function CountdownBox({ value, label }) {
     <div
       className="flex flex-col items-center justify-center rounded-lg font-black text-white"
       style={{
-        width: "clamp(62px, 21vw, 160px)",
-        height: "clamp(72px, 16vw, 120px)",
+        width: "clamp(62px, 21vw, 145px)",
+        height: "clamp(72px, 16vw, 130px)",
         background: "rgba(0,0,0,0.60)",
         border: "2px solid rgba(255,200,0,0.6)",
         boxShadow:
@@ -475,18 +475,18 @@ export default function Home() {
           </div>
 
           <h2
-            className="uppercase text-[#061529] text-center"
-            style={{
-              fontFamily: "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
-              fontSize: "clamp(2.4rem, 7vw, 4rem)",
-              fontWeight: 250,
-              letterSpacing: "0.05em",
-              lineHeight: 1.05,
-              transform: "scaleY(1.35)",
-            }}
-          >
-            Grand Opening
-          </h2>
+  className="uppercase text-[#061529] text-center"
+  style={{
+    fontFamily: "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
+    fontSize: "clamp(1.9rem, 8vw, 4rem)",
+    fontWeight: 550,
+    letterSpacing: "0.05em",
+    lineHeight: 1,
+    WebkitTextStroke: "0.4px #061529",
+  }}
+>
+  Grand Opening
+</h2>
 
           <div className="flex flex-col gap-[10px]">
             <span className="block w-9 h-[3px] bg-red-600 rounded-full rotate-[-30deg] origin-left"></span>
