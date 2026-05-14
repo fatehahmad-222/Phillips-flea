@@ -155,7 +155,7 @@ export default function Home() {
 
             {/* Hours */}
             <div className="flex items-start gap-3 mt-4.5">
-              <svg className="w-6 h-6 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+              <svg className="w-6 h-6 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={.8} viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
               </svg>
@@ -326,7 +326,8 @@ export default function Home() {
       {/* ══════════════════════════════════
            HERO BANNER
       ══════════════════════════════════ */}
-<section id="home" className="relative w-full h-[600px] md:h-[700px] overflow-hidden">        <Image
+<section   id="home"
+  className="relative w-full min-h-[720px] md:h-[700px] overflow-hidden">        <Image
           src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778771994/background_image_phillips_flea_sayli5.png"
           alt="Phillips Flea Market"
           fill
@@ -363,7 +364,7 @@ export default function Home() {
     fontFamily: "'Bromello', 'Milkshake', 'Brush Script MT', cursive",
     color: "#f4efe7",
     textShadow: "0 2px 6px rgba(0,0,0,0.35)",
-    fontSize: "clamp(2.8rem, 4.5vw, 3.3rem)",
+    fontSize:  "clamp(1.8rem, 7vw, 3.3rem)",
     fontWeight: 400,
     letterSpacing: "0.02em",
     fontStyle: "italic",
@@ -464,10 +465,10 @@ export default function Home() {
       {/* ══════════════════════════════════
            GRAND OPENING SECTION
       ══════════════════════════════════ */}
-      <section id="grand-opening" className="bg-[#ede1d1] py-16 px-6">
+      <section id="grand-opening" className="bg-[#ede1d1] py-16 px-6 ">
 
-        <div className="flex items-center justify-center gap-5 mb-6">
-          <div className="flex flex-col gap-[10px]">
+<div className="flex items-center justify-center gap-2 sm:gap-5 mb-6 px-2">       
+     <div className="flex flex-col gap-[10px]">
             <span className="block w-9 h-[3px] bg-red-600 rounded-full rotate-[30deg] origin-right"></span>
             <span className="block w-10 h-[3px] bg-red-600 rounded-full rotate-[5deg] origin-right"></span>
             <span className="block w-9 h-[3px] bg-red-600 rounded-full rotate-[-20deg] origin-right"></span>
@@ -527,8 +528,7 @@ export default function Home() {
           </p>
 
           {/* Highlight Strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-4">
-            {[
+         <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6">            {[
               {
                 img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760319/WhatsApp_Image_2026-05-13_at_18.41.34__2_-removebg-preview_fsbmtp.png",
                 title: "PRIZES &\nGIVEAWAYS",
@@ -552,26 +552,28 @@ export default function Home() {
             ].map((item, idx) => (
               <div
                 key={item.title}
-                className={`relative flex flex-col items-center justify-start gap-2 px-4 py-6 ${
+                className={`relative flex flex-col items-center justify-start gap-2 px-2 sm:px-4 py-4 sm:py-6 ${
                   idx < 3 ? "border-r border-[#DEC2BA]" : ""
                 }`}
               >
                 <Image
                   src={item.img}
                   alt={item.title}
-                  width={134}
-                  height={134}
-                  className="object-contain"
+                  width={110}
+                  height={110}
+                  className="object-contain w-[80px] sm:w-[110px] md:w-[134px] h-auto"
                 />
                 <p
                   className="font-black text-indigo-950 uppercase tracking-wide text-center leading-snug whitespace-pre-line"
-                  style={{ fontSize: "1.3rem" }}
+                  style={{fontSize: "clamp(0.72rem, 2.7vw, 1.3rem)",
+  lineHeight: 1.15, }}
                 >
                   {item.title}
                 </p>
                 <p
                   className="font-medium text-indigo-950 text-center leading-snug whitespace-pre-line"
-                  style={{ fontSize: "0.82rem" }}
+                  style={{  fontSize: "clamp(0.58rem, 2vw, 0.82rem)",
+  lineHeight: 1.2, }}
                 >
                   {item.desc}
                 </p>
