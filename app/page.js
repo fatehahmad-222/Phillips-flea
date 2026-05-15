@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 // ── NAV STRUCTURE ──────────────────────────────────────────────
 const NAV_ITEMS = [
   {
@@ -42,28 +42,21 @@ const NAV_ITEMS = [
       { label: "Hourly Forecast",        href: "https://weather.com/weather/hourbyhour/l/08865", external: true },
     ],
   },
-  {
-    label: "CONTACT",
-    dropdown: [
+  
+{
+  label: "CONTACT",
+  href: "/contact",
+  dropdown: [
     { label: "Call Us", href: "tel:+19086270152" },
-
-    {
-      label: "Email Us",
-      href: "mailto:junkdrunkflea@gmail.com",
-    },
-
-    {
-      label: "Hours",
-      href: "#hours",
-    },
-
+    { label: "Email Us", href: "mailto:junkdrunkflea@gmail.com" },
+    { label: "Hours", href: "#hours" },
     {
       label: "Location",
       href: "https://www.google.com/maps?q=179+Broad+St+Phillipsburg+NJ+08865",
       external: true,
     },
   ],
-  },
+}
 ];
 
 // ── COUNTDOWN TARGET ───────────────────────────────────────────
@@ -94,8 +87,8 @@ function CountdownBox({ value, label }) {
     <div
       className="flex flex-col items-center justify-center rounded-lg font-black text-white"
       style={{
-        width: "clamp(62px, 21vw, 145px)",
-        height: "clamp(72px, 16vw, 130px)",
+        width: "clamp(78px, 23vw, 130px)",
+        height: "clamp(88px, 18vw, 115px)",
         background: "rgba(0,0,0,0.60)",
         border: "2px solid rgba(255,200,0,0.6)",
         boxShadow:
@@ -108,8 +101,10 @@ function CountdownBox({ value, label }) {
     >
       <span
         style={{
-          fontSize: "clamp(1.4rem, 5vw, 2.8rem)",
+          fontSize: "clamp(1.8rem, 6vw, 3.4rem)",
           lineHeight: 1,
+                    transform: "scaleY(1.2)",
+
         }}
       >
         {String(value).padStart(2, "0")}
@@ -117,9 +112,9 @@ function CountdownBox({ value, label }) {
 
       <span
         style={{
-          fontSize: "clamp(0.42rem, 1.8vw, 0.7rem)",
+          fontSize: "clamp(0.45rem, 1.8vw, 0.7rem)",
           letterSpacing: "0.14em",
-          fontWeight: 650,
+          fontWeight: 550,
           color: "#FFFFFF",
           textTransform: "uppercase",
           lineHeight: 1,
@@ -166,15 +161,26 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-10">
 
             {/* Hours */}
-            <div className="flex items-start gap-3 mt-0.5 ">
-              <svg className="w-6 h-6  text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
-              </svg>
-              <div>
-                <p className=" mt- text-xs font-bold text-gray-700">Saturday &amp; Sunday 7AM – 3PM</p>
-              </div>
-            </div>
+            <div className="flex items-center gap-2 ">
+  <svg
+    className="w-6 h-6 text-gray-500 flex-shrink-0"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    viewBox="0 0 24 24"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M12 6v6l4 2"
+    />
+  </svg>
+
+  <p className="text-sm text-gray-700 font-semibold leading-none">
+    Saturday &amp; Sunday 7AM - 3PM
+  </p>
+</div>
 
             <div className="hidden sm:block w-px h-12 bg-gray-300" />
 
@@ -304,12 +310,12 @@ export default function Home() {
           )}
         </>
       ) : (
-        <a
-          href={item.href}
-          className="flex items-center px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150"
-        >
-          {item.label}
-        </a>
+        <Link
+  href={item.href}
+  className="flex items-center px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150"
+>
+  {item.label}
+</Link>
       )}
     </li>
   ))}
@@ -601,58 +607,75 @@ export default function Home() {
           </p>
 
           {/* Highlight Strip */}
-         <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6">            {[
-              {
-                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760319/WhatsApp_Image_2026-05-13_at_18.41.34__2_-removebg-preview_fsbmtp.png",
-                title: "PRIZES &\nGIVEAWAYS",
-                desc: "Exciting prizes\nall weekend long!",
-              },
-              {
-                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760391/WhatsApp_Image_2026-05-14_at_01.53.22-removebg-preview_scgzow.png",
-                title: "WIN A FREE\nVENDOR TABLE\nFOR 6 MONTHS",
-                desc: "One lucky vendor\nwill win big!",
-              },
-              {
-                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760434/hot_dog-removebg-preview_k0cu5u.png",
-                title: "HOT DOG STAND\n& ENTERTAINMENT",
-                desc: "Enjoy great food\nand live entertainment\nall weekend!",
-              },
-              {
-                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760455/raffle-removebg-preview_anteyf.png",
-                title: "VENDOR RAFFLE\nAT NOON ON\nSATURDAY",
-                desc: "With multiple\nvendor prizes!",
-              },
-            ].map((item, idx) => (
-              <div
-                key={item.title}
-                className={`relative flex flex-col items-center justify-start gap-2 px-2 sm:px-4 py-4 sm:py-6 ${
-                  idx < 3 ? "border-r border-[#DEC2BA]" : ""
-                }`}
-              >
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  width={110}
-                  height={110}
-                  className="object-contain w-[80px] sm:w-[110px] md:w-[134px] h-auto"
-                />
-                <p
-                  className="font-black text-indigo-950 uppercase tracking-wide text-center leading-snug whitespace-pre-line"
-                  style={{fontSize: "clamp(0.72rem, 2.7vw, 1.3rem)",
-  lineHeight: 1.15, }}
-                >
-                  {item.title}
-                </p>
-                <p
-                  className="font-medium text-indigo-950 text-center leading-snug whitespace-pre-line"
-                  style={{  fontSize: "clamp(0.58rem, 2vw, 0.82rem)",
-  lineHeight: 1.2, }}
-                >
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+         {/* Highlight Strip */}
+<div className="grid grid-cols-2 sm:grid-cols-4 -mx-6 ">
+  {[
+    {
+      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760319/WhatsApp_Image_2026-05-13_at_18.41.34__2_-removebg-preview_fsbmtp.png",
+      title: "PRIZES & GIVEAWAYS",
+      desc: "Exciting prizes all\nweekend long",
+      scale: "scale-[0.85]",
+    },
+    {
+      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760391/WhatsApp_Image_2026-05-14_at_01.53.22-removebg-preview_scgzow.png",
+      title: "FREE VENDOR TABLE",
+      desc: "One lucky vendor will win a\ntable for free for 6 months!",
+      scale: "scale-[0.80]",
+    },
+    {
+      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760434/hot_dog-removebg-preview_k0cu5u.png",
+      title: "FOOD & ENTERTAINMENT",
+      desc: "Hot dog stand and great\nmusic all weekend!",
+      scale: "scale-[1.20]",
+    },
+    {
+      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760455/raffle-removebg-preview_anteyf.png",
+      title: "VENDOR RAFFLE",
+      desc: "With multiple prizes.\nStarting at 12PM noon!",
+      scale: "scale-[1.10]",
+    },
+  ].map((item, idx) => (
+    <div
+      key={item.title}
+      className={`relative flex flex-col items-center justify-start gap-4 px-3 py-5 ${
+        idx < 3 ? "border-r border-[#DEC2BA] " : ""
+      } `}
+    >
+      {/* ICON */}
+      <div className="flex items-center justify-center w-[6rem] h-[6rem] sm:w-[7rem] sm:h-[7rem] md:w-[8rem] md:h-[8rem]">
+        <Image
+          src={item.img}
+          alt={item.title}
+          width={120}
+          height={120}
+          className={`object-contain w-full h-full ${item.scale}`}
+        />
+      </div>
+
+      {/* TITLE */}
+<p
+  className="font-black text-indigo-950 uppercase tracking-wide text-center whitespace-nowrap overflow-hidden text-ellipsis"
+  style={{
+    fontSize: "clamp(0.61rem, 1.8vw, 0.95rem)", // ↓ reduced ~10%
+    lineHeight: 1.1,
+  }}
+>
+  {item.title}
+</p>
+
+      {/* DESCRIPTION */}
+   <p
+  className="font-medium text-indigo-950 text-center leading-snug whitespace-pre-line line-clamp-2"
+  style={{
+    fontSize: "clamp(0.52rem, 1.6vw, 0.74rem)", // ↓ reduced ~10%
+    lineHeight: 1.25,
+  }}
+>
+  {item.desc}
+</p>
+    </div>
+  ))}
+</div>
 
         </div>
       </section>
