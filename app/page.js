@@ -523,7 +523,7 @@ export default function Home() {
           <h2
             className="uppercase text-[#061529] text-center"
             style={{
-              fontFamily: "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
+              fontFamily: " 'Arial Black', 'Franklin Gothic Medium', sans-serif",
               fontSize: "clamp(2rem, 8vw, 4rem)",
               fontWeight: 500,
               letterSpacing: "0.04em",
