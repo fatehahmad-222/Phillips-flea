@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   {
      
     label: "HOME",
-    href: "#home",
+    href: "/",
   
   },
   {
@@ -103,8 +103,7 @@ function CountdownBox({ value, label }) {
         style={{
           fontSize: "clamp(1.8rem, 6vw, 3.4rem)",
           lineHeight: 1,
-                    transform: "scaleY(1.2)",
-
+          transform: "scaleY(1.2)",
         }}
       >
         {String(value).padStart(2, "0")}
@@ -141,8 +140,7 @@ export default function Home() {
       {/* ══════════════════════════════════
            TOP HEADER
       ══════════════════════════════════ */}
-      <header className="bg-[#ede1d1] border-b border-gray-200 px-6 py-4"
-      >
+      <header className="bg-[#ede1d1] border-b border-gray-200 px-6 py-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
 
           {/* Logo */}
@@ -161,26 +159,15 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-10">
 
             {/* Hours */}
-            <div className="flex items-center gap-2 ">
-  <svg
-    className="w-6 h-6 text-gray-500 flex-shrink-0"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    viewBox="0 0 24 24"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M12 6v6l4 2"
-    />
-  </svg>
-
-  <p className="text-sm text-gray-700 font-semibold leading-none">
-    Saturday &amp; Sunday 7AM - 3PM
-  </p>
-</div>
+            <div className="flex items-center gap-2">
+              <svg className="w-6 h-6 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+              </svg>
+              <p className="text-sm text-gray-700 font-semibold leading-none">
+                Saturday &amp; Sunday 7AM - 3PM
+              </p>
+            </div>
 
             <div className="hidden sm:block w-px h-12 bg-gray-300" />
 
@@ -250,76 +237,68 @@ export default function Home() {
 
           {/* ── DESKTOP ── */}
           <ul className="hidden md:flex items-center justify-center">
-  {NAV_ITEMS.map((item) => (
-    <li
-      key={item.label}
-      className="relative"
-      onMouseEnter={() => item.dropdown && setOpenTab(item.label)}
-      onMouseLeave={() => setOpenTab(null)}
-    >
-      {item.dropdown ? (
-        <>
-          <button className="flex items-center gap-1.5 px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150 focus:outline-none">
-            {item.label}
-            <svg
-              className="w-3 h-3 opacity-60"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2.5}
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </button>
-
-          {openTab === item.label && (
-            <ul className="absolute top-full left-0 min-w-[210px] bg-white shadow-xl border border-gray-100 rounded-b-lg z-50 py-1.5">
-              {item.dropdown.map((sub) => (
-                <li key={sub.label}>
-                  <a
-                    href={sub.href}
-                    target={sub.external ? "_blank" : undefined}
-                    rel={sub.external ? "noopener noreferrer" : undefined}
-                    className="flex items-center justify-between gap-2 px-5 py-3 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
-                  >
-                    {sub.label}
-
-                    {sub.external && (
-                      <svg
-                        className="w-3 h-3 opacity-40"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        viewBox="0 0 24 24"
+            {NAV_ITEMS.map((item) => (
+              <li
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => item.dropdown && setOpenTab(item.label)}
+                onMouseLeave={() => setOpenTab(null)}
+              >
+                {item.dropdown ? (
+                  <>
+                    {/* If item has its own href (e.g. CONTACT), use Link; otherwise plain button */}
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="flex items-center gap-1.5 px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
+                        {item.label}
+                        <svg className="w-3 h-3 opacity-60" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </Link>
+                    ) : (
+                      <button className="flex items-center gap-1.5 px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150 focus:outline-none">
+                        {item.label}
+                        <svg className="w-3 h-3 opacity-60" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
                     )}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </>
-      ) : (
-        <Link
-  href={item.href}
-  className="flex items-center px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150"
->
-  {item.label}
-</Link>
-      )}
-    </li>
-  ))}
-</ul>
+
+                    {openTab === item.label && (
+                      <ul className="absolute top-full left-0 min-w-[210px] bg-white shadow-xl border border-gray-100 rounded-b-lg z-50 py-1.5">
+                        {item.dropdown.map((sub) => (
+                          <li key={sub.label}>
+                            <a
+                              href={sub.href}
+                              target={sub.external ? "_blank" : undefined}
+                              rel={sub.external ? "noopener noreferrer" : undefined}
+                              className="flex items-center justify-between gap-2 px-5 py-3 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
+                            >
+                              {sub.label}
+                              {sub.external && (
+                                <svg className="w-3 h-3 opacity-40" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                              )}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="flex items-center px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
 
           {/* ── MOBILE ── */}
           <div className="md:hidden flex items-center justify-between py-3">
@@ -335,76 +314,87 @@ export default function Home() {
           </div>
 
           {mobileOpen && (
-  <div className="md:hidden pb-2 border-t border-stone-600">
-    {NAV_ITEMS.map((item) => (
-      <div key={item.label}>
-        {item.dropdown ? (
-          <>
-            <button
-              onClick={() =>
-                setMobileTab(mobileTab === item.label ? null : item.label)
-              }
-              className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-100 hover:bg-stone-600 transition-colors"
-            >
-              {item.label}
+            <div className="md:hidden pb-2 border-t border-stone-600">
+              {NAV_ITEMS.map((item) => (
+                <div key={item.label}>
+                  {item.dropdown ? (
+                    <>
+                      {/* If item has its own href (e.g. CONTACT), show Link + chevron toggle */}
+                      {item.href ? (
+                        <div className="flex items-center justify-between">
+                          <Link
+                            href={item.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="flex-1 px-4 py-3 text-sm font-semibold text-gray-100 hover:bg-stone-600 transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                          <button
+                            onClick={() => setMobileTab(mobileTab === item.label ? null : item.label)}
+                            className="px-4 py-3 text-gray-100 hover:bg-stone-600 transition-colors"
+                          >
+                            <svg
+                              className={`w-4 h-4 transition-transform duration-200 ${mobileTab === item.label ? "rotate-180" : ""}`}
+                              fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          onClick={() => setMobileTab(mobileTab === item.label ? null : item.label)}
+                          className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-100 hover:bg-stone-600 transition-colors"
+                        >
+                          {item.label}
+                          <svg
+                            className={`w-4 h-4 transition-transform duration-200 ${mobileTab === item.label ? "rotate-180" : ""}`}
+                            fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      )}
 
-              <svg
-                className={`w-4 h-4 transition-transform duration-200 ${
-                  mobileTab === item.label ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-
-            {mobileTab === item.label && (
-              <ul className="bg-stone-900">
-                {item.dropdown.map((sub) => (
-                  <li key={sub.label}>
-                    <a
-                      href={sub.href}
-                      target={sub.external ? "_blank" : undefined}
-                      rel={sub.external ? "noopener noreferrer" : undefined}
+                      {mobileTab === item.label && (
+                        <ul className="bg-stone-900">
+                          {item.dropdown.map((sub) => (
+                            <li key={sub.label}>
+                              <a
+                                href={sub.href}
+                                target={sub.external ? "_blank" : undefined}
+                                rel={sub.external ? "noopener noreferrer" : undefined}
+                                onClick={() => setMobileOpen(false)}
+                                className="block px-8 py-2.5 text-sm text-gray-300 hover:text-amber-400 transition-colors"
+                              >
+                                {sub.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block px-8 py-2.5 text-sm text-gray-300 hover:text-amber-400 transition-colors"
+                      className="block px-4 py-3 text-sm font-semibold text-gray-100 hover:bg-stone-600 transition-colors"
                     >
-                      {sub.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </>
-        ) : (
-          <a
-            href={item.href}
-            onClick={() => setMobileOpen(false)}
-            className="block px-4 py-3 text-sm font-semibold text-gray-100 hover:bg-stone-600 transition-colors"
-          >
-            {item.label}
-          </a>
-        )}
-      </div>
-    ))}
-  </div>
-)}
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </nav>
 
       {/* ══════════════════════════════════
            HERO BANNER
       ══════════════════════════════════ */}
-<section   id="home"
-  className="relative w-full min-h-[720px] md:h-[700px] overflow-hidden">    
-      <Image
+      <section id="home" className="relative w-full min-h-[720px] md:h-[700px] overflow-hidden">
+        <Image
           src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778771994/background_image_phillips_flea_sayli5.png"
           alt="Phillips Flea Market"
           fill
@@ -414,86 +404,65 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
 
         {/* Hero Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-3 ">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-3">
 
-          
-          {/* ── GRAND OPENING IMAGE — replace URL below ── */}
-         <img
-  src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778770240/banner_kxm08y.png"
-  alt="Grand Opening"
-  style={{ 
-    width: "auto",
-    maxWidth: "92vw",
-    maxHeight: "clamp(90px, 20vw, 180px)",
-    objectFit: "contain",
-   
-    marginBottom: "clamp(-20px, -8.2vw, -30px)",
-    zIndex: 20,
-    position: "relative",
-  }}
-/>
+          {/* ── GRAND OPENING IMAGE ── */}
+          <img
+            src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778770240/banner_kxm08y.png"
+            alt="Grand Opening"
+            style={{
+              width: "auto",
+              maxWidth: "92vw",
+              maxHeight: "clamp(90px, 20vw, 180px)",
+              objectFit: "contain",
+              marginBottom: "clamp(-20px, -8.2vw, -30px)",
+              zIndex: 20,
+              position: "relative",
+            }}
+          />
 
           {/* Subtitle */}
-         <p
-  
-  style={{
-    zIndex: "30",
-    fontFamily: "'Bromello', 'Milkshake', 'Brush Script MT', cursive",
-    color: "#f4efe7",
-    textShadow: "0 2px 6px rgba(0,0,0,0.35)",
-    fontSize:  "clamp(1.8rem, 7vw, 3.3rem)",
-    fontWeight: 400,
-    letterSpacing: "0.02em",
-    fontStyle: "italic",
-    transform: "translateY(-10px)",
-  }}
->
-  The countdown is on!
-</p>
+          <p
+            style={{
+              zIndex: "30",
+              fontFamily: "'Bromello', 'Milkshake', 'Brush Script MT', cursive",
+              color: "#f4efe7",
+              textShadow: "0 2px 6px rgba(0,0,0,0.35)",
+              fontSize: "clamp(1.8rem, 7vw, 3.3rem)",
+              fontWeight: 400,
+              letterSpacing: "0.02em",
+              fontStyle: "italic",
+              transform: "translateY(-10px)",
+            }}
+          >
+            The countdown is on!
+          </p>
 
           {/* Decorative Stars Line */}
-         <div
-  className="flex items-center justify-center gap-3 -translate-y-5 z-30"
-  
->
-  <svg className="w-20 md:w-28 h-6" viewBox="0 0 100 20" fill="none">
-    <defs>
-      <marker id="arrowRight" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
-        <path d="M0,0 L6,3 L0,6 Z" fill="#FBBF24" />
-      </marker>
-    </defs>
-    <path d="M5 12 Q50 8 95 12" stroke="#FBBF24" strokeWidth="1.2" fill="none" markerEnd="url(#arrowRight)" />
-  </svg>
+          <div className="flex items-center justify-center gap-3 -translate-y-5 z-30">
+            <svg className="w-20 md:w-28 h-6" viewBox="0 0 100 20" fill="none">
+              <defs>
+                <marker id="arrowRight" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="#FBBF24" />
+                </marker>
+              </defs>
+              <path d="M5 12 Q50 8 95 12" stroke="#FBBF24" strokeWidth="1.2" fill="none" markerEnd="url(#arrowRight)" />
+            </svg>
+            <svg className="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" /></svg>
+            <svg className="w-5 h-5 text-amber-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" /></svg>
+            <svg className="w-7 h-7 text-amber-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" /></svg>
+            <svg className="w-5 h-5 text-amber-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" /></svg>
+            <svg className="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" /></svg>
+            <svg className="w-20 md:w-28 h-6" viewBox="0 0 100 20" fill="none">
+              <defs>
+                <marker id="arrowLeft" markerWidth="6" markerHeight="6" refX="3" refY="4" orient="0" markerUnits="strokeWidth">
+                  <path d="M8,0 L0,4 L8,8 Z" fill="#FBBF24" />
+                </marker>
+              </defs>
+              <path d="M95 12 Q50 8 5 12" stroke="#FBBF24" strokeWidth="1.2" fill="none" markerEnd="url(#arrowLeft)" />
+            </svg>
+          </div>
 
-  <svg className="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" />
-  </svg>
-
-  <svg className="w-5 h-5 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" />
-  </svg>
-
-  <svg className="w-7 h-7 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" />
-  </svg>
-
-  <svg className="w-5 h-5 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" />
-  </svg>
-
-  <svg className="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.9 6.6 18.8l1-6.1L3.2 8.4l6.1-.9L12 2z" />
-  </svg>
-
-  <svg className="w-20 md:w-28 h-6" viewBox="0 0 100 20" fill="none">
-    <defs>
-      <marker id="arrowLeft" markerWidth="6" markerHeight="6" refX="3" refY="4" orient="0" markerUnits="strokeWidth">
-        <path d="M8,0 L0,4 L8,8 Z" fill="#FBBF24" />
-      </marker>
-    </defs>
-    <path d="M95 12 Q50 8 5 12" stroke="#FBBF24" strokeWidth="1.2" fill="none" markerEnd="url(#arrowLeft)" />
-  </svg>
-</div>
           {/* COUNTDOWN TIMER */}
           <div className="relative flex flex-col items-center pb-10">
             <div
@@ -523,7 +492,7 @@ export default function Home() {
           {/* Bottom tagline */}
           <p
             style={{
-              zIndex:"30",
+              zIndex: "30",
               fontFamily: "'Dancing Script', 'Brush Script MT', 'Comic Sans MS', cursive",
               color: "#ffd700",
               textShadow: "0 4px 12px rgba(0,0,0,0.8)",
@@ -542,30 +511,30 @@ export default function Home() {
       {/* ══════════════════════════════════
            GRAND OPENING SECTION
       ══════════════════════════════════ */}
-      <section id="grand-opening" className="bg-[#ede1d1] py-16 px-6 ">
+      <section id="grand-opening" className="bg-[#ede1d1] py-16 px-6">
 
-<div className="flex items-center justify-center gap-2 sm:gap-5 mb-6 px-2">       
-     <div className="flex flex-col gap-[10px]">
+        <div className="flex items-center justify-center gap-2 sm:gap-5 mb-6 px-2">
+          <div className="flex flex-col gap-[10px]">
             <span className="block w-9 h-[3px] bg-red-600 rounded-full rotate-[30deg] origin-right"></span>
             <span className="block w-10 h-[3px] bg-red-600 rounded-full rotate-[5deg] origin-right"></span>
             <span className="block w-9 h-[3px] bg-red-600 rounded-full rotate-[-20deg] origin-right"></span>
           </div>
 
-         <h2
-  className="uppercase text-[#061529] text-center"
-  style={{
-    fontFamily: "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
-    fontSize: "clamp(2rem, 8vw, 4rem)",
-    fontWeight: 500,
-    letterSpacing: "0.04em",
-    lineHeight: 0.9,
-    textRendering: "geometricPrecision",
-    WebkitFontSmoothing: "none",
-    WebkitTextStroke: "0.6px #061529",
-  }}
->
-  Grand Opening
-</h2>
+          <h2
+            className="uppercase text-[#061529] text-center"
+            style={{
+              fontFamily: "'Impact', 'Arial Black', 'Franklin Gothic Medium', sans-serif",
+              fontSize: "clamp(2rem, 8vw, 4rem)",
+              fontWeight: 500,
+              letterSpacing: "0.04em",
+              lineHeight: 0.9,
+              textRendering: "geometricPrecision",
+              WebkitFontSmoothing: "none",
+              WebkitTextStroke: "0.6px #061529",
+            }}
+          >
+            Grand Opening
+          </h2>
 
           <div className="flex flex-col gap-[10px]">
             <span className="block w-9 h-[3px] bg-red-600 rounded-full rotate-[-30deg] origin-left"></span>
@@ -600,82 +569,80 @@ export default function Home() {
               fontSize: "clamp(2rem, 6vw, 4rem)",
               fontWeight: 500,
               fontStyle: "italic",
-              
             }}
           >
             Don&rsquo;t miss out!
           </p>
 
           {/* Highlight Strip */}
-         {/* Highlight Strip */}
-<div className="grid grid-cols-2 sm:grid-cols-4 -mx-6 ">
-  {[
-    {
-      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760319/WhatsApp_Image_2026-05-13_at_18.41.34__2_-removebg-preview_fsbmtp.png",
-      title: "PRIZES & GIVEAWAYS",
-      desc: "Exciting prizes all\nweekend long",
-      scale: "scale-[0.85]",
-    },
-    {
-      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760391/WhatsApp_Image_2026-05-14_at_01.53.22-removebg-preview_scgzow.png",
-      title: "FREE VENDOR TABLE",
-      desc: "One lucky vendor will win a\ntable for free for 6 months!",
-      scale: "scale-[0.80]",
-    },
-    {
-      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760434/hot_dog-removebg-preview_k0cu5u.png",
-      title: "FOOD & ENTERTAINMENT",
-      desc: "Hot dog stand and great\nmusic all weekend!",
-      scale: "scale-[1.20]",
-    },
-    {
-      img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760455/raffle-removebg-preview_anteyf.png",
-      title: "VENDOR RAFFLE",
-      desc: "With multiple prizes.\nStarting at 12PM noon!",
-      scale: "scale-[1.10]",
-    },
-  ].map((item, idx) => (
-    <div
-      key={item.title}
-      className={`relative flex flex-col items-center justify-start gap-4 px-3 py-5 ${
-        idx < 3 ? "border-r border-[#DEC2BA] " : ""
-      } `}
-    >
-      {/* ICON */}
-      <div className="flex items-center justify-center w-[6rem] h-[6rem] sm:w-[7rem] sm:h-[7rem] md:w-[8rem] md:h-[8rem]">
-        <Image
-          src={item.img}
-          alt={item.title}
-          width={120}
-          height={120}
-          className={`object-contain w-full h-full ${item.scale}`}
-        />
-      </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 -mx-6">
+            {[
+              {
+                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760319/WhatsApp_Image_2026-05-13_at_18.41.34__2_-removebg-preview_fsbmtp.png",
+                title: "PRIZES & GIVEAWAYS",
+                desc: "Exciting prizes all\nweekend long",
+                scale: "scale-[0.85]",
+              },
+              {
+                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760391/WhatsApp_Image_2026-05-14_at_01.53.22-removebg-preview_scgzow.png",
+                title: "FREE VENDOR TABLE",
+                desc: "One lucky vendor will win a\ntable for free for 6 months!",
+                scale: "scale-[0.80]",
+              },
+              {
+                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760434/hot_dog-removebg-preview_k0cu5u.png",
+                title: "FOOD & ENTERTAINMENT",
+                desc: "Hot dog stand and great\nmusic all weekend!",
+                scale: "scale-[1.20]",
+              },
+              {
+                img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760455/raffle-removebg-preview_anteyf.png",
+                title: "VENDOR RAFFLE",
+                desc: "With multiple prizes.\nStarting at 12PM noon!",
+                scale: "scale-[1.10]",
+              },
+            ].map((item, idx) => (
+              <div
+                key={item.title}
+                className={`relative flex flex-col items-center justify-start gap-4 px-3 py-5 ${
+                  idx < 3 ? "border-r border-[#DEC2BA]" : ""
+                }`}
+              >
+                {/* ICON */}
+                <div className="flex items-center justify-center w-[6rem] h-[6rem] sm:w-[7rem] sm:h-[7rem] md:w-[8rem] md:h-[8rem]">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={120}
+                    height={120}
+                    className={`object-contain w-full h-full ${item.scale}`}
+                  />
+                </div>
 
-      {/* TITLE */}
-<p
-  className="font-black text-indigo-950 uppercase tracking-wide text-center whitespace-nowrap overflow-hidden text-ellipsis"
-  style={{
-    fontSize: "clamp(0.61rem, 1.8vw, 0.95rem)", // ↓ reduced ~10%
-    lineHeight: 1.1,
-  }}
->
-  {item.title}
-</p>
+                {/* TITLE */}
+                <p
+                  className="font-black text-indigo-950 uppercase tracking-wide text-center whitespace-nowrap overflow-hidden text-ellipsis"
+                  style={{
+                    fontSize: "clamp(0.61rem, 1.8vw, 0.95rem)",
+                    lineHeight: 1.1,
+                  }}
+                >
+                  {item.title}
+                </p>
 
-      {/* DESCRIPTION */}
-   <p
-  className="font-medium text-indigo-950 text-center leading-snug whitespace-pre-line line-clamp-2"
-  style={{
-    fontSize: "clamp(0.52rem, 1.6vw, 0.74rem)", // ↓ reduced ~10%
-    lineHeight: 1.25,
-  }}
->
-  {item.desc}
-</p>
-    </div>
-  ))}
-</div>
+                {/* DESCRIPTION */}
+                <p
+                  className="font-medium text-indigo-950 text-center leading-snug whitespace-pre-line line-clamp-2"
+                  style={{
+                    fontSize: "clamp(0.52rem, 1.6vw, 0.74rem)",
+                    lineHeight: 1.25,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
 
         </div>
       </section>
