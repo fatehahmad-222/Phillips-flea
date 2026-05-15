@@ -6,12 +6,10 @@ import Image from "next/image";
 // ── NAV STRUCTURE ──────────────────────────────────────────────
 const NAV_ITEMS = [
   {
+     
     label: "HOME",
-    dropdown: [
-      { label: "Home",          href: "#home" },
-      { label: "Grand Opening", href: "#grand-opening" },
-      { label: "Announcements", href: "#announcements" },
-    ],
+    href: "#home",
+  
   },
   {
     label: "ABOUT",
@@ -47,10 +45,24 @@ const NAV_ITEMS = [
   {
     label: "CONTACT",
     dropdown: [
-      { label: "Call Us",    href: "tel:+19086270152" },
-      { label: "Email Us",   href: "mailto:junkdrunkflea@gmail.com" },
-      { label: "Directions", href: "https://www.google.com/maps?q=179+Broad+St+Phillipsburg+NJ+08865", external: true },
-    ],
+    { label: "Call Us", href: "tel:+19086270152" },
+
+    {
+      label: "Email Us",
+      href: "mailto:junkdrunkflea@gmail.com",
+    },
+
+    {
+      label: "Hours",
+      href: "#hours",
+    },
+
+    {
+      label: "Location",
+      href: "https://www.google.com/maps?q=179+Broad+St+Phillipsburg+NJ+08865",
+      external: true,
+    },
+  ],
   },
 ];
 
@@ -154,15 +166,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-10">
 
             {/* Hours */}
-            <div className="flex items-start gap-3 mt-4.5">
-              <svg className="w-6 h-6 mt-0.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={.8} viewBox="0 0 24 24">
+            <div className="flex items-start gap-3 mt-0.5 ">
+              <svg className="w-6 h-6  text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
               </svg>
               <div>
-                <p className="font-semibold text-gray-800 text-sm">Hours</p>
-                <p className="text-xs text-gray-500">Saturday &amp; Sunday</p>
-                <p className="text-xs text-gray-500">Outdoor: 7AM – 3PM</p>
+                <p className=" mt- text-xs font-bold text-gray-700">Saturday &amp; Sunday 7AM – 3PM</p>
               </div>
             </div>
 
@@ -234,43 +244,76 @@ export default function Home() {
 
           {/* ── DESKTOP ── */}
           <ul className="hidden md:flex items-center justify-center">
-            {NAV_ITEMS.map((item) => (
-              <li
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => setOpenTab(item.label)}
-                onMouseLeave={() => setOpenTab(null)}
-              >
-                <button className="flex items-center gap-1.5 px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150 focus:outline-none">
-                  {item.label}
-                  <svg className="w-3 h-3 opacity-60" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {openTab === item.label && (
-                  <ul className="absolute top-full left-0 min-w-[210px] bg-white shadow-xl border border-gray-100 rounded-b-lg z-50 py-1.5">
-                    {item.dropdown.map((sub) => (
-                      <li key={sub.label}>
-                        <a
-                          href={sub.href}
-                          target={sub.external ? "_blank" : undefined}
-                          rel={sub.external ? "noopener noreferrer" : undefined}
-                          className="flex items-center justify-between gap-2 px-5 py-3 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
-                        >
-                          {sub.label}
-                          {sub.external && (
-                            <svg className="w-3 h-3 opacity-40" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                          )}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
+  {NAV_ITEMS.map((item) => (
+    <li
+      key={item.label}
+      className="relative"
+      onMouseEnter={() => item.dropdown && setOpenTab(item.label)}
+      onMouseLeave={() => setOpenTab(null)}
+    >
+      {item.dropdown ? (
+        <>
+          <button className="flex items-center gap-1.5 px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150 focus:outline-none">
+            {item.label}
+            <svg
+              className="w-3 h-3 opacity-60"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          {openTab === item.label && (
+            <ul className="absolute top-full left-0 min-w-[210px] bg-white shadow-xl border border-gray-100 rounded-b-lg z-50 py-1.5">
+              {item.dropdown.map((sub) => (
+                <li key={sub.label}>
+                  <a
+                    href={sub.href}
+                    target={sub.external ? "_blank" : undefined}
+                    rel={sub.external ? "noopener noreferrer" : undefined}
+                    className="flex items-center justify-between gap-2 px-5 py-3 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
+                  >
+                    {sub.label}
+
+                    {sub.external && (
+                      <svg
+                        className="w-3 h-3 opacity-40"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
+      ) : (
+        <a
+          href={item.href}
+          className="flex items-center px-10 lg:px-14 py-4 text-sm font-semibold tracking-wide text-gray-100 hover:text-amber-400 transition-colors duration-150"
+        >
+          {item.label}
+        </a>
+      )}
+    </li>
+  ))}
+</ul>
 
           {/* ── MOBILE ── */}
           <div className="md:hidden flex items-center justify-between py-3">
@@ -286,40 +329,67 @@ export default function Home() {
           </div>
 
           {mobileOpen && (
-            <div className="md:hidden pb-2 border-t border-stone-600">
-              {NAV_ITEMS.map((item) => (
-                <div key={item.label}>
-                  <button
-                    onClick={() => setMobileTab(mobileTab === item.label ? null : item.label)}
-                    className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-100 hover:bg-stone-600 transition-colors"
-                  >
-                    {item.label}
-                    <svg className={`w-4 h-4 transition-transform duration-200 ${mobileTab === item.label ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {mobileTab === item.label && (
-                    <ul className="bg-stone-900">
-                      {item.dropdown.map((sub) => (
-                        <li key={sub.label}>
-                          <a
-                            href={sub.href}
-                            target={sub.external ? "_blank" : undefined}
-                            rel={sub.external ? "noopener noreferrer" : undefined}
-                            onClick={() => setMobileOpen(false)}
-                            className="block px-8 py-2.5 text-sm text-gray-300 hover:text-amber-400 transition-colors"
-                          >
-                            {sub.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
+  <div className="md:hidden pb-2 border-t border-stone-600">
+    {NAV_ITEMS.map((item) => (
+      <div key={item.label}>
+        {item.dropdown ? (
+          <>
+            <button
+              onClick={() =>
+                setMobileTab(mobileTab === item.label ? null : item.label)
+              }
+              className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-gray-100 hover:bg-stone-600 transition-colors"
+            >
+              {item.label}
 
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  mobileTab === item.label ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {mobileTab === item.label && (
+              <ul className="bg-stone-900">
+                {item.dropdown.map((sub) => (
+                  <li key={sub.label}>
+                    <a
+                      href={sub.href}
+                      target={sub.external ? "_blank" : undefined}
+                      rel={sub.external ? "noopener noreferrer" : undefined}
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-8 py-2.5 text-sm text-gray-300 hover:text-amber-400 transition-colors"
+                    >
+                      {sub.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </>
+        ) : (
+          <a
+            href={item.href}
+            onClick={() => setMobileOpen(false)}
+            className="block px-4 py-3 text-sm font-semibold text-gray-100 hover:bg-stone-600 transition-colors"
+          >
+            {item.label}
+          </a>
+        )}
+      </div>
+    ))}
+  </div>
+)}
         </div>
       </nav>
 
@@ -327,7 +397,8 @@ export default function Home() {
            HERO BANNER
       ══════════════════════════════════ */}
 <section   id="home"
-  className="relative w-full min-h-[720px] md:h-[700px] overflow-hidden">        <Image
+  className="relative w-full min-h-[720px] md:h-[700px] overflow-hidden">    
+      <Image
           src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778771994/background_image_phillips_flea_sayli5.png"
           alt="Phillips Flea Market"
           fill
@@ -590,7 +661,7 @@ export default function Home() {
            FOOTER
       ══════════════════════════════════ */}
       <footer id="location" className="bg-stone-800 text-gray-400 py-10 px-6 text-center text-sm">
-        <p className="text-white font-bold text-lg mb-1">Phillips Flea Market</p>
+        <p className="text-white font-bold text-lg mb-1">Phillips Flea</p>
         <p>179 Broad St, Phillipsburg, NJ 08865</p>
         <p className="mt-2">
           <a href="tel:+19083445061" className="hover:text-white transition-colors">(908) 344-5061</a>
