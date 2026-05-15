@@ -416,7 +416,7 @@ export default function ContactPage() {
 
       {/* ═════════ HERO (same + timer) ═════════ */}
       <section   id="home"
-        className="relative w-full min-h-[720px] md:h-[700px] overflow-hidden">    
+        className="relative w-full h-[520px] md:h-[700px] overflow-hidden">    
             <Image
                 src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778771994/background_image_phillips_flea_sayli5.png"
                 alt="Phillips Flea Market"
