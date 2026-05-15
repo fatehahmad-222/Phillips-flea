@@ -603,20 +603,26 @@ export default function ContactPage() {
       value: "junkdrunkflea@gmail.com",
       href: "mailto:junkdrunkflea@gmail.com",
     },
-    {
-      label: "Web:",
-      value: "www.phillipsflea.com",
-      href: "https://www.phillipsflea.com",
-    },
+    
     {
       label: "Facebook:",
       value: "facebook.com/phillipsflea",
       href: "https://facebook.com",
     },
     {
-      label: "Vendor Agreement:",
-      value: "Vendor Agreement",
-      href: "/vendor-agreement",
+      label: "Instagram:",
+      value: "instagram.com/phillipsflea",
+      href: "https://instagram.com",
+    },
+     {
+      label: "Youtube:",
+      value: "youtube.com/phillipsflea",
+      href: "https://youtube.com",
+    },
+    {
+      label: "Tiktok:",
+      value: "tiktok.com/phillipsflea",
+      href: "https://tiktok.com",
     },
     
   ].map((item, i, arr) => (
@@ -642,16 +648,23 @@ export default function ContactPage() {
 </div>
     </div>
 
-    {/* RIGHT SIDE IMAGE */}
-    <div className="w-full flex justify-center">
-      <Image
-        src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778861882/phillipflea_location_s9hywh.jpg"
-        alt="Contact"
-        width={630}
-        height={600}
-        className="rounded-xl object-contain"
-      />
-    </div>
+    
+<div className="w-full flex justify-center">
+  <a
+    href="https://www.google.com/maps?q=179+Broad+St+Phillipsburg+NJ+08865"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block"
+  >
+    <Image
+      src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778861882/phillipflea_location_s9hywh.jpg"
+      alt="Contact"
+      width={630}
+      height={600}
+      className="rounded-xl object-contain cursor-pointer hover:opacity-95 transition-opacity duration-200"
+    />
+  </a>
+</div>
 
   </div>
 </section>
