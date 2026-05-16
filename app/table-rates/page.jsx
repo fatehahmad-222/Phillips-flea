@@ -18,7 +18,7 @@ export default function TableRentingPage() {
 
       {/* ═════════ TABLE RENTING SECTION ═════════ */}
       <section className="py-20 px-6 bg-[#f5f1e8]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-centre">
 
           {/* LEFT SIDE */}
           <div>
@@ -105,7 +105,7 @@ export default function TableRentingPage() {
           </div>
 
           {/* RIGHT SIDE — image */}
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center pb-120">
             <Image
               src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778945167/flea_xwtdk8.avif"
               alt="Tables"

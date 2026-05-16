@@ -58,22 +58,15 @@ export default function OurStoryPage() {
           </div>
 
           {/* RIGHT SIDE — image (same as contact page) */}
-          <div className="w-full flex justify-center">
-            <a
-              href="https://www.google.com/maps?q=179+Broad+St+Phillipsburg+NJ+08865"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <Image
-                src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778945167/flea_xwtdk8.avif"
-                alt="Our Story — Phillips Flea"
-                width={630}
-                height={600}
-                className="rounded-xl object-contain cursor-pointer hover:opacity-95 transition-opacity duration-200"
-              />
-            </a>
-          </div>
+          <div className="w-full flex justify-center pb-72">
+                      <Image
+                        src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778945167/flea_xwtdk8.avif"
+                        alt="Tables"
+                        width={630}
+                        height={600}
+                        className="rounded-xl object-contain cursor-pointer hover:opacity-95 transition-opacity duration-200"
+                      />
+                    </div>
 
         </div>
       </section>
@@ -83,7 +76,7 @@ export default function OurStoryPage() {
         <p className="text-white font-bold text-lg mb-1">Phillips Flea</p>
         <p>179 Broad St, Phillipsburg, NJ 08865</p>
         <p className="mt-2">
-          <a href="tel:+19083445061" className="hover:text-white">(908) 344-5061</a>
+          <a href="tel:+19083445061" className="hover:text-white">908 344-5061</a>
           {" · "}
           <a href="mailto:junkdrunkflea@gmail.com" className="hover:text-white">junkdrunkflea@gmail.com</a>
         </p>
