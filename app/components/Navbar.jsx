@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   {
     label: "ABOUT",
     dropdown: [
-      { label: "Our Story",  href: "/ourstory" },
+      { label: "Our Story",  href: "/our-story" },
       
     ],
   },
@@ -27,7 +27,7 @@ const NAV_ITEMS = [
   {
     label: "EVENTS",
     dropdown: [
-      { label: "Grand Opening",   href: "/grandopening" },
+      { label: "Grand Opening",   href: "/grand-opening" },
      
     ],
   },

@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-
+import Footer from "../components/Footer";
 export default function OurStoryPage() {
   return (
     <main className="min-h-screen bg-amber-50 font-sans">
@@ -48,7 +47,7 @@ export default function OurStoryPage() {
                 experience we hope to share with every visitor to our market.
               </p>
 
-              <p className="font-medium text-black">
+              <p className="font-semibold text-black">
                 So let the hunt begin!
               </p>
             </div>
@@ -69,15 +68,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* ═════════ FOOTER ═════════ */}
-      <footer className="bg-stone-800 text-gray-400 py-10 px-6 text-center text-sm">
-        <p className="text-white font-bold text-lg mb-1">Phillips Flea</p>
-        <p>179 Broad St, Phillipsburg, NJ 08865</p>
-        <p className="mt-2">
-          <a href="tel:+19083445061" className="hover:text-white">908 344-5061</a>
-          {" · "}
-          <a href="mailto:junkdrunkflea@gmail.com" className="hover:text-white">junkdrunkflea@gmail.com</a>
-        </p>
-      </footer>
+      <Footer />
 
     </main>
   );

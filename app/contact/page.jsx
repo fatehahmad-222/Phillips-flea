@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Footer from "../components/Footer";
 
 
 
@@ -38,7 +39,6 @@ export default function ContactPage() {
       </h2>
 
       <p className="text-gray-700 mb-6 leading-relaxed">
-        <p className="font-bold">At PHILLIPS FLEA,</p>
         We would love to hear from you. Whether you are a vendor looking
         to join our marketplace or a visitor planning your weekend trip,
         our team is here to help. Reach out anytime and we’ll guide you
@@ -47,7 +47,8 @@ export default function ContactPage() {
 
       {/* LOCATION */}
       <div className="mb-6">
-        <h3 className="font-semibold text-lg text-[#061529]">Location</h3>
+        <h3 className="font-semibold text-xl text-[#061529] pb-1">Location</h3>
+        
 
         <p className="text-gray-700">
           179 Broad St / Route 29<br />
@@ -65,7 +66,7 @@ export default function ContactPage() {
       </div>
 
       {/* LINKS WITH STROKES */}
-      <div className="flex flex-col font-medium text-gray-800">
+      <div className="flex flex-col  text-gray-800">
   {[
     {
       label: "Phone:",
@@ -135,19 +136,7 @@ export default function ContactPage() {
 </section>
 
       {/* ═════════ FOOTER (same as your page) ═════════ */}
-      <footer className="bg-black text-gray-400 py-10 px-6 text-center text-sm">
-        <p className="text-white font-bold text-lg mb-1">Phillips Flea</p>
-        <p>179 Broad St, Phillipsburg, NJ 08865</p>
-        <p className="mt-2">
-          <a href="tel:+19083445061" className="hover:text-white">
-            908 344 5061
-          </a>{" "}
-          ·{" "}
-          <a href="mailto:junkdrunkflea@gmail.com" className="hover:text-white">
-            junkdrunkflea@gmail.com
-          </a>
-        </p>
-      </footer>
+  <Footer />
 
     </main>
   );
