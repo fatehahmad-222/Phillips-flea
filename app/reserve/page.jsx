@@ -16,7 +16,7 @@ export default function ComingSoonPage() {
       
         <p className="mt-6 text-gray-500 text-lg font-medium tracking-wide">
      Please call  
-                <a href="tel:+19086270152 " className="pl-2 text-blue-600 font-medium">
+                <a href="tel:+19083445061 " className="pl-2 text-blue-600 font-medium">
                   
                 908 344 5061
                 </a> to reserved your table
