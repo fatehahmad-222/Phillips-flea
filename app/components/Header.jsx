@@ -25,7 +25,7 @@ return(
                     <circle cx="12" cy="12" r="10" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
                   </svg>
-                  <p className="text-sm text-gray-700 font-semibold leading-none">
+                  <p className="text-sm text-black font-semibold leading-none">
                     Saturday &amp; Sunday 7AM - 3PM
                   </p>
                 </div>

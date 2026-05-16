@@ -14,7 +14,7 @@ export default function TableRentingPage() {
 
       <Header />
       <Navbar />
-      <Hero />
+      
 
       {/* ═════════ TABLE RENTING SECTION ═════════ */}
       <section className="py-20 px-6 bg-[#f5f1e8]">
@@ -27,7 +27,7 @@ export default function TableRentingPage() {
             </h2>
 
             <p className="text-gray-700 mb-8 leading-relaxed">
-              <span className="font-bold">At PHILLIPS FLEA,</span> we make it easy and affordable to
+               we make it easy and affordable to
               set up your own vendor space. Whether you're a seasoned seller or just getting started,
               our table rental options are designed to fit every budget. Come join our growing community
               of vendors every weekend!
@@ -55,7 +55,7 @@ export default function TableRentingPage() {
                   <div key={row.label}>
                     <div className="flex items-center justify-between py-3">
                       <span className="text-gray-700 font-medium">{row.label}</span>
-                      <span className="font-medium text-[#061529] text-lg">{row.price}</span>
+                      <span className="font-medium text-gray-700 text-lg">{row.price}</span>
                     </div>
                     {i !== arr.length - 1 && <div className="border-b border-gray-300" />}
                   </div>
@@ -64,14 +64,14 @@ export default function TableRentingPage() {
 
               {/* Senior discount */}
               <div className="mt-5 rounded-xl px-5 py-4">
-                <p className="font-medium text-[#061529] text-sm mb-1">
+                <p className="font-medium text-gray-700 text-sm mb-1">
                   Senior Discount — Ages 65+
                 </p>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   Seniors 65 or older <span className="font-medium">(with proof of ID)</span> get
-                  their 1st table for <span className="font-medium text-[#061529]">$15</span> and any
+                  their 1st table for <span className="font-medium text-gray-700">$15</span> and any
                   additional tables at{" "}
-                  <span className="font-medium text-[#061529]">$5 / table</span>.
+                  <span className="font-medium text-gray-700">$5 / table</span>.
                 </p>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function TableRentingPage() {
           </div>
 
           {/* RIGHT SIDE — image */}
-          <div className="w-full flex justify-center pb-120">
+          <div className="w-full flex justify-center ">
             <Image
               src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778945167/flea_xwtdk8.avif"
               alt="Tables"

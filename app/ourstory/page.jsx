@@ -11,8 +11,7 @@ export default function OurStoryPage() {
 
       <Header />
       <Navbar />
-      <Hero />
-
+      
       {/* ═════════ OUR STORY SECTION ═════════ */}
       <section className="py-20 px-6 bg-[#f5f1e8]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -25,8 +24,6 @@ export default function OurStoryPage() {
 
             <div className="text-gray-700 leading-relaxed space-y-5">
               <p>
-                <span className="font-bold text-gray-700">At PHILLIPS FLEA,</span>
-               <br/>
                 Our story begins in a small European country where I was raised.
                 My grandparents endured two world wars and learned to live with humility,
                 resilience, and an appreciation for the value in every possession.
@@ -51,14 +48,14 @@ export default function OurStoryPage() {
                 experience we hope to share with every visitor to our market.
               </p>
 
-              <p className="font-medium text-gray-700">
+              <p className="font-medium text-black">
                 So let the hunt begin!
               </p>
             </div>
           </div>
 
           {/* RIGHT SIDE — image (same as contact page) */}
-          <div className="w-full flex justify-center pb-72">
+          <div className="w-full flex justify-center ">
                       <Image
                         src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778945167/flea_xwtdk8.avif"
                         alt="Tables"
