@@ -43,7 +43,7 @@ export default function TableRentingPage() {
               </h3>
              
 
-              <h4 className="font-medium text-lg text-[#061529] mb-3">
+              <h4 className="font-medium text-lg text-gray-700 mb-3">
                 Saturday &amp; Sunday
               </h4>
 
@@ -55,7 +55,7 @@ export default function TableRentingPage() {
                   <div key={row.label}>
                     <div className="flex items-center justify-between py-3">
                       <span className="text-gray-700 font-medium">{row.label}</span>
-                      <span className="font-medium text-gray-700 text-lg">{row.price}</span>
+                      <span className="font-medium text-gray-700 ">{row.price}</span>
                     </div>
                     {i !== arr.length - 1 && <div className="border-b border-gray-300" />}
                   </div>
@@ -63,7 +63,7 @@ export default function TableRentingPage() {
               </div>
 
               {/* Senior discount */}
-              <div className="mt-5 rounded-xl px-5 py-4">
+              <div className="mt-5 rounded-xl ">
                 <p className="font-medium text-gray-700 text-sm mb-1">
                   Senior Discount — Ages 65+
                 </p>
