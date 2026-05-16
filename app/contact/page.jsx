@@ -17,8 +17,7 @@ const NAV_ITEMS = [
     label: "ABOUT",
     dropdown: [
       { label: "Our Story",  href: "#about" },
-      { label: "Location",   href: "#location" },
-      { label: "Hours",      href: "#hours" },
+      
     ],
   },
   {
@@ -208,7 +207,7 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2 7l10 7 10-7" />
                     </svg>
                     <div>
-                      <a href="mailto:junkdrunkflea@gmail.com" className="text-blue-600 text-sm font-semibold hover:underline">
+                      <a href="mailto:junkdrunkflea@gmail.com" className="text-black text-sm font-semibold hover:underline">
                         junkdrunkflea@gmail.com
                       </a>
                     </div>
@@ -221,7 +220,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <a href="tel:+19086270152" className="font-semibold text-gray-800 text-sm hover:underline">
-                        (908) 627-0152
+                        (908) 344-5061
                       </a>
                     </div>
                   </div>
@@ -260,7 +259,7 @@ export default function ContactPage() {
             </header>
 
       {/* ═════════ NAVBAR (same structure) ═════════ */}
-      <nav className="sticky top-0 z-50 bg-stone-800 shadow-lg">
+      <nav className="sticky top-0 z-50 bg-black shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
 
           {/* ── DESKTOP ── */}
