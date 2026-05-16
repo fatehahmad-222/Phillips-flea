@@ -20,14 +20,14 @@ const NAV_ITEMS = [
     label: "VENDORS",
     dropdown: [
       { label: "Table Rates",    href: "/table-rates" },
-      { label: "How to Reserve", href: "#reserve" },
-      { label: "Vendor Rules",   href: "#rules" },
+      { label: "How to Reserve", href: "/reserve" },
+      { label: "Vendor Rules",   href: "/rules" },
     ],
   },
   {
     label: "EVENTS",
     dropdown: [
-      { label: "Grand Opening",   href: "#grand-opening" },
+      { label: "Grand Opening",   href: "/grandopening" },
      
     ],
   },
