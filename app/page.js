@@ -30,7 +30,7 @@ const NAV_ITEMS = [
     label: "EVENTS",
     dropdown: [
       { label: "Grand Opening",   href: "#grand-opening" },
-      { label: "Upcoming Events", href: "#events" },
+     
     ],
   },
   {
@@ -139,7 +139,7 @@ export default function Home() {
       {/* ══════════════════════════════════
            TOP HEADER
       ══════════════════════════════════ */}
-      <header className="bg-[#ede1d1] border-b border-gray-200 px-6 py-4">
+      <header className="bg-[#f5f1e8] border-b border-gray-200 px-6 py-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
 
           {/* Logo */}
@@ -211,17 +211,8 @@ export default function Home() {
                   <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-gray-500 hover:text-black transition-colors">
-                <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
-                </svg>
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-gray-500 hover:text-red-600 transition-colors">
-                <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
-                  <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
-                </svg>
-              </a>
+
+             
             </div>
 
           </div>
@@ -510,7 +501,7 @@ export default function Home() {
       {/* ══════════════════════════════════
            GRAND OPENING SECTION
       ══════════════════════════════════ */}
-      <section id="grand-opening" className="bg-[#ede1d1] py-16 px-6">
+      <section id="grand-opening" className="bg-[#f5f1e8] py-16 px-6">
 
         <div className="flex items-center justify-center gap-2 sm:gap-5 mb-6 px-2">
           <div className="flex flex-col gap-[10px]">
