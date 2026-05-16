@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   {
     label: "ABOUT",
     dropdown: [
-      { label: "Our Story",  href: "#about" },
+      { label: "Our Story",  href: "/ourstory" },
       
     ],
   },

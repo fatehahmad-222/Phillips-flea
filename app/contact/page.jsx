@@ -140,7 +140,7 @@ export default function ContactPage() {
         <p>179 Broad St, Phillipsburg, NJ 08865</p>
         <p className="mt-2">
           <a href="tel:+19083445061" className="hover:text-white">
-            908 344 5061
+            (908) 344 5061
           </a>{" "}
           ·{" "}
           <a href="mailto:junkdrunkflea@gmail.com" className="hover:text-white">
