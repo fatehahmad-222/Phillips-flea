@@ -65,8 +65,8 @@ export default function ContactPage() {
   {[
     {
       label: "Phone:",
-      value: "(908) 627-0152",
-      href: "tel:+19086270152",
+      value: "908 344 5061",
+      href: "tel:+19083445061",
     },
     {
       label: "Email:",
