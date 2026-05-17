@@ -12,7 +12,6 @@ export default function Home() {
     <main className="min-h-screen bg-amber-50 font-sans">
       {/* TOP HEADER */}
       <Header />
-
       {/* STICKY NAVBAR */}
       <Navbar />
 
@@ -89,50 +88,65 @@ export default function Home() {
             {[
               {
                 img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760319/WhatsApp_Image_2026-05-13_at_18.41.34__2_-removebg-preview_fsbmtp.png",
-                title: "PRIZES & GIVEAWAYS",
-                desc: "Exciting prizes all\nweekend long",
+                title: "PRIZES &\nGIVEAWAYS",
+                titleSm: "PRIZES & GIVEAWAYS",
+                desc: "Exciting prizes all weekend long",
                 scale: "scale-[0.85]",
+                // mobile: right border + bottom border
+                
               },
               {
                 img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760391/WhatsApp_Image_2026-05-14_at_01.53.22-removebg-preview_scgzow.png",
-                title: "FREE VENDOR TABLE",
-                desc: "One lucky vendor will win a\ntable for free for 6 months!",
+                title: "FREE VENDOR\nTABLE",
+                titleSm: "FREE VENDOR TABLE",
+                desc: "One lucky vendor wins a table free for 6 months!",
                 scale: "scale-[0.80]",
+             
               },
               {
                 img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760434/hot_dog-removebg-preview_k0cu5u.png",
-                title: "FOOD & ENTERTAINMENT",
-                desc: "Hot dog stand and great\nmusic all weekend!",
+                title: "FOOD &\nENTERTAINMENT",
+                titleSm: "FOOD & ENTERTAINMENT",
+                desc: "Hot dog stand and great music all weekend!",
                 scale: "scale-[1.20]",
+            
+             
               },
               {
                 img: "https://res.cloudinary.com/dgz6utv5q/image/upload/v1778760455/raffle-removebg-preview_anteyf.png",
-                title: "VENDOR RAFFLE",
-                desc: "With multiple prizes.\nStarting at 12PM noon!",
+                title: "VENDOR\nRAFFLE",
+                titleSm: "VENDOR RAFFLE",
+                desc: "With multiple prizes. Starting at 12PM noon!",
                 scale: "scale-[1.10]",
+                // no borders (bottom-right cell)
+                borderClass: "",
               },
             ].map((item) => (
               <div
-                key={item.title}
-                className="relative flex flex-col items-center justify-start gap-4 px-3 py-5"
+                key={item.titleSm}
+                className={`relative flex flex-col items-center justify-start gap-3 px-3 py-5 ${item.borderClass}`}
               >
-                <div className="flex items-center justify-center w-[6rem] h-[6rem] sm:w-[7rem] sm:h-[7rem] md:w-[8rem] md:h-[8rem]">
+                {/* Image */}
+                <div className="flex items-center justify-center w-[5.5rem] h-[5.5rem] sm:w-[7rem] sm:h-[7rem] md:w-[8rem] md:h-[8rem]">
                   <Image
                     src={item.img}
-                    alt={item.title}
+                    alt={item.titleSm}
                     width={120}
                     height={120}
                     className={`object-contain w-full h-full ${item.scale}`}
                   />
                 </div>
 
-                <p className="font-black text-indigo-950 uppercase tracking-wide text-center">
-                  {item.title}
+                {/* Title — 2-line on mobile, single line on sm+ */}
+                <p className="font-black text-indigo-950 uppercase tracking-wide text-center text-[12px] leading-tight sm:text-sm md:text-base whitespace-pre-line sm:whitespace-normal">
+                  <span className="sm:hidden">{item.title}</span>
+                  <span className="hidden sm:inline">{item.titleSm}</span>
                 </p>
 
-                <p className="font-medium text-indigo-950 text-center leading-snug whitespace-pre-line line-clamp-2">
-                  {item.desc}
-                </p>
+                {/* Description — fixed wrapping, no clustering */}
+               <p className="font-medium text-indigo-950 text-center text-[12px] leading-snug sm:text-sm md:text-base max-w-[140px] sm:max-w-none break-words whitespace-normal [overflow-wrap:anywhere] [word-break:normal] hyphens-none">
+  {item.desc}
+</p>
               </div>
             ))}
           </div>
