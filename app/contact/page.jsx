@@ -4,7 +4,6 @@
 import Image from "next/image";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 
 
@@ -24,10 +23,6 @@ export default function ContactPage() {
       {/* ═════════ NAVBAR (same structure) ═════════ */}
       <Navbar/>
 
-      {/* ═════════ HERO (same + timer) ═════════ */}
-      <Hero/>
-
-      {/* ═════════ CONTACT SECTION ═════════ */}
       {/* ═════════ CONTACT SECTION ═════════ */}
 <section className="py-20 px-6 bg-[#f5f1e8]">
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
