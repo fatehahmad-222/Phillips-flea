@@ -13,7 +13,7 @@ export default function Footer() {
           href="tel:+19083445061"
           className="hover:text-white transition-colors"
         >
-          908 344 5061
+          908.344.5061
         </a>
         {" · "}
         <a

@@ -65,7 +65,7 @@ export default function ContactPage() {
   {[
     {
       label: "Phone:",
-      value: "908 344 5061",
+      value: "908.344.5061",
       href: "tel:+19083445061",
     },
     {
@@ -74,16 +74,7 @@ export default function ContactPage() {
       href: "mailto:junkdrunkflea@gmail.com",
     },
     
-    {
-      label: "Facebook:",
-      value: "facebook.com/phillipsflea",
-      href: "https://facebook.com",
-    },
-    {
-      label: "Instagram:",
-      value: "instagram.com/phillipsflea",
-      href: "https://instagram.com",
-    },
+
      
     
   ].map((item, i, arr) => (

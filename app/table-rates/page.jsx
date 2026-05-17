@@ -27,7 +27,7 @@ export default function TableRentingPage() {
             </h2>
 
             <p className="text-gray-700 mb-8 leading-relaxed">
-               we make it easy and affordable to
+               We make it easy and affordable to
               set up your own vendor space. Whether you're a seasoned seller or just getting started,
               our table rental options are designed to fit every budget. Come join our growing community
               of vendors every weekend!
@@ -49,8 +49,8 @@ export default function TableRentingPage() {
 
               <div className="flex flex-col gap-0">
                 {[
-                  { label: "1st Table", price: "$20" },
-                  { label: "2nd & Additional (max 4)", price: "$10 each" },
+                  { label: "1st table", price: "$20" },
+                  { label: "2nd & additional (max 4)", price: "$10 each" },
                 ].map((row, i, arr) => (
                   <div key={row.label}>
                     <div className="flex items-center justify-between py-3">
@@ -95,9 +95,9 @@ export default function TableRentingPage() {
 
               <p className="text-[#061529] leading-relaxed font-semibold">Please call for pricing : 
                 
-                <a href="tel:+19086270152 " className="pl-2 text-blue-600 font-medium">
+                <a href="tel:+19083445061 " className="pl-2 text-blue-600 font-medium">
                   
-                908 344 5061
+                908.344.5061
                 </a>
               </p>
               

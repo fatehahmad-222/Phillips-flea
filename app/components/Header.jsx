@@ -51,8 +51,8 @@ return(
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.45 11.45 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1C9.39 21 3 14.61 3 7a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
                   </svg>
                   <div>
-                    <a href="tel:+19086270152" className="font-semibold text-gray-800 text-sm hover:underline">
-                      908 344 5061
+                    <a href="tel:+19083445061" className="font-semibold text-gray-800 text-sm hover:underline">
+                      908.344.5061
                     </a>
                   </div>
                 </div>

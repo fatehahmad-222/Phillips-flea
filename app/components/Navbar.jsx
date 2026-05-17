@@ -48,16 +48,6 @@ const NAV_ITEMS = [
   {
     label: "CONTACT",
     href: "/contact",
-    dropdown: [
-      { label: "Call Us", href: "tel:+19086270152" },
-      { label: "Email Us", href: "mailto:junkdrunkflea@gmail.com" },
-      { label: "Hours", href: "#hours" },
-      {
-        label: "Location",
-        href: "https://www.google.com/maps?q=179+Broad+St+Phillipsburg+NJ+08865",
-        external: true,
-      },
-    ],
   },
 ];
 
