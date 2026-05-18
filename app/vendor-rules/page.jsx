@@ -12,35 +12,34 @@ export default function VendorRulesPage() {
       <Navbar />
 
       {/* ═════════ HERO HEADING ═════════ */}
-      <section className="py-14 px-6 bg-[#f5f1e8] text-center ">
-        <h1 className="text-4xl font-bold text-[#061529]  uppercase">
+      <section className="py-14 px-6 bg-[#f5f1e8] text-center">
+        <h1 className="text-4xl font-bold text-[#061529] uppercase">
           Market Policies &amp; Vendor Guidelines
         </h1>
       </section>
 
-      {/* ═════════ WELCOME INTRO ═════════ */}
-      <section className="py-10 px-6 bg-[#f5f1e8]">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-xl font-semibold text-[#061529] mb-4">
-            Welcome to Phillips Flea!
-          </h2>
-          <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            Our goal is to create an enjoyable outdoor market experience where vendors, shoppers,
-            and the local community can come together in a clean, friendly and organized environment.
-            To help keep the market running smoothly, we ask all participants to follow the guidelines below.
-          </p>
-        </div>
-      </section>
+      {/* ═════════ WELCOME INTRO + TWO-COLUMN RULES (single section, no gap) ═════════ */}
+      <section className=" px-6 bg-[#f5f1e8]">
+        <div className="max-w-6xl mx-auto">
 
-      {/* ═════════ TWO-COLUMN RULES ═════════ */}
-      <section className="py-10 px-6 bg-[#f5f1e8]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+          {/* Intro */}
+          <div className="text-center mb-10">
+            <h2 className="text-xl font-semibold text-[#061529] mb-4">
+              Welcome to Phillips Flea!
+            </h2>
+            <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Our goal is to create an enjoyable outdoor market experience where vendors, shoppers,
+              and the local community can come together in a clean, friendly and organized environment.
+              To help keep the market running smoothly, we ask all participants to follow the guidelines below.
+            </p>
+          </div>
 
-          {/* ── LEFT COLUMN ── */}
-          <div className="space-y-8 text-gray-700 leading-relaxed">
+          {/* Two-column grid — 3 rows so left/right items align row-by-row */}
+          <div className="grid md:grid-cols-2 gap-x-12">
 
+            {/* ── ROW 1 ── */}
             {/* Vendor Setup */}
-            <div>
+            <div className="mb-8 text-gray-700 leading-relaxed">
               <h2 className="text-xl font-semibold text-[#061529] mb-3">
                 Vendor Setup &amp; Space Use
               </h2>
@@ -53,46 +52,8 @@ export default function VendorRulesPage() {
               </p>
             </div>
 
-            {/* Cleanup */}
-            <div>
-              <h2 className="text-xl font-semibold text-[#061529] mb-3">
-                Cleanup Responsibilities
-              </h2>
-              <p className="space-y-2 list-disc list-inside">
-                Vendors are expected to leave their area in the same condition it was found.
-                All boxes, trash, damaged merchandise, packing materials, and unsold items must be removed from the property at the end of the event.<br/>
-
-                Any vendor leaving excessive waste or abandoned items behind may lose future vendor privileges or receive cleanup charges.
-              </p>
-            </div>
-
-            {/* Merchandise */}
-            <div>
-              <h2 className="text-xl font-semibold text-[#061529] mb-3">
-                Merchandise Guidelines
-              </h2>
-              <p className="mb-2">
-                Phillips Flea is intended to feature vintage goods, collectibles, handmade items, antiques,
-                art, décor, and unique finds. Vendors offering unrelated merchandise may require approval before setting up.
-              </p>
-              <p className="mb-2 font-medium text-gray-700">The following items are strictly prohibited:</p>
-              <p className="space-y-2 list-disc list-inside">
-                Weapons, ammunition, or explosive materials, fireworks or hazardous products.
-                Counterfeit, stolen, or illegal merchandise.
-                Pornographic or explicitly offensive materials &amp; items promoting hate or discrimination.
-              </p>
-              <p className="mt-2">
-                Management may require the removal of any merchandise considered inappropriate for the event.
-              </p>
-            </div>
-
-          </div>
-
-          {/* ── RIGHT COLUMN ── */}
-          <div className="space-y-8 text-gray-700 leading-relaxed">
-
             {/* Food, Smoking & Safety */}
-            <div>
+            <div className="mb-8 text-gray-700 leading-relaxed">
               <h2 className="text-xl font-semibold text-[#061529] mb-3">
                 Food, Smoking &amp; Safety
               </h2>
@@ -104,8 +65,21 @@ export default function VendorRulesPage() {
               </p>
             </div>
 
+            {/* ── ROW 2 ── */}
+            {/* Cleanup */}
+            <div className="mb-8 text-gray-700 leading-relaxed">
+              <h2 className="text-xl font-semibold text-[#061529] mb-3">
+                Cleanup Responsibilities
+              </h2>
+              <p className="space-y-2 list-disc list-inside">
+                Vendors are expected to leave their area in the same condition it was found.
+                All boxes, trash, damaged merchandise, packing materials, and unsold items must be removed from the property at the end of the event.<br/>
+                Any vendor leaving excessive waste or abandoned items behind may lose future vendor privileges or receive cleanup charges.
+              </p>
+            </div>
+
             {/* Pets */}
-            <div>
+            <div className="mb-8 text-gray-700 leading-relaxed">
               <h2 className="text-xl font-semibold text-[#061529] mb-3">
                 Pets &amp; General Attendance
               </h2>
@@ -115,8 +89,29 @@ export default function VendorRulesPage() {
               </p>
             </div>
 
+            {/* ── ROW 3 ── */}
+            {/* Merchandise */}
+            <div className="mb-8 text-gray-700 leading-relaxed">
+              <h2 className="text-xl font-semibold text-[#061529] mb-3">
+                Merchandise Guidelines
+              </h2>
+              <p className="mb-2">
+                Phillips Flea is intended to feature vintage goods, collectibles, handmade items, antiques,
+                art, décor, and unique finds. Vendors offering unrelated merchandise may require approval before setting up.
+              </p>
+              <p className="mb-2 font-semibold text-[#061529]">The following items are strictly prohibited:</p>
+              <p className="space-y-2 list-disc list-inside">
+                Weapons, ammunition, or explosive materials, fireworks or hazardous products.
+                Counterfeit, stolen, or illegal merchandise.
+                Pornographic or explicitly offensive materials &amp; items promoting hate or discrimination.
+              </p>
+              <p className="mt-2">
+                Management may require the removal of any merchandise considered inappropriate for the event.
+              </p>
+            </div>
+
             {/* Respect */}
-            <div>
+            <div className="mb-8 text-gray-700 leading-relaxed">
               <h2 className="text-xl font-semibold text-[#061529] mb-3">
                 Respect for the Market
               </h2>
@@ -128,7 +123,6 @@ export default function VendorRulesPage() {
             </div>
 
           </div>
-
         </div>
       </section>
 
