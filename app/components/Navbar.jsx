@@ -18,7 +18,7 @@ const NAV_ITEMS = [
     dropdown: [
       { label: "Table Rates", href: "/table-rates" },
       { label: "How to Reserve", href: "/reserve" },
-      { label: "Vendor Rules", href: "/rules" },
+      { label: "Vendor Rules", href: "/vendor-rules" },
     ],
   },
   {
