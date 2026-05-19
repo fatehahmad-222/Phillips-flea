@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -8,15 +9,18 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-6">
 
         {/* Logo */}
+           {/* Logo (CLICKABLE) */}
         <div className="flex-shrink-0 flex justify-center xl:justify-start w-full xl:w-auto">
-          <Image
-            src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778610627/phillips_flea_logo_tyfycm.png"
-            alt="Phillips Flea Market"
-            width={220}
-            height={80}
-            priority
-            className="object-contain h-20 md:h-24"
-          />
+          <Link href="/">
+            <Image
+              src="https://res.cloudinary.com/dgz6utv5q/image/upload/v1778610627/phillips_flea_logo_tyfycm.png"
+              alt="Phillips Flea Market"
+              width={220}
+              height={80}
+              priority
+              className="object-contain h-20 md:h-24 cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* CONTACT STRIP WRAPPER */}
